@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Dockerandroid by saymagic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Dockerandroid</h1>
+      <h2 class="project-tagline">DockerAndroid based on Docker Remote API, it can get image and containter&#39;s info from docker server.</h2>
+      <a href="https://github.com/saymagic/dockerandroid" class="btn">View on GitHub</a>
+      <a href="https://github.com/saymagic/dockerandroid/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/saymagic/dockerandroid/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="a-docker-android-app" class="anchor" href="#a-docker-android-app" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>A Docker Android APP</h1>
+
+<p><img src="img/logo.png" alt=""></p>
+
+<p>DockerAndroid based on Docker Remote API, it can get image and containter's info from docker server</p>
+
+<h1>
+<a id="how-does-it-look-like-" class="anchor" href="#how-does-it-look-like-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How does it look like ?</h1>
+
+<p><img src="img/Screenshot_2016-03-03-10-51-39.png" width="340">
+<img src="img/Screenshot_2016-03-03-10-51-51.png" width="340"></p>
+
+<p><img src="img/Screenshot_2016-03-03-10-51-55.png" width="340">
+<img src="img/Screenshot_2016-03-03-10-52-28.png" width="340"></p>
+
+<h1>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use?</h1>
+
+<ul>
+<li>First, you must have a server installed Docker.</li>
+<li>
+<p>Second, modify <code>/etc/default/docker</code> file, add TCP connection mode to DOCKER_OPTS.This file maybe empty, so you also need add unix-sock mode, just like this:</p>
+
+<p>DOCKER_OPTS="-H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock"</p>
+</li>
+<li>
+<p>Restart docker.</p>
+
+<p>sudo service docker restart</p>
+</li>
+<li>
+<p>Finally, test on your server: </p>
+
+<p>curl http://localhost:2375/info</p>
+</li>
+</ul>
+
+<p>If response like below , you are ready!</p>
+
+<p><img src="img/image_20160303102658.png" alt=""></p>
+
+<p>Try to login with your IP and Port! Have Fun!</p>
+
+<h1>
+<a id="download" class="anchor" href="#download" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Download:</h1>
+
+<p><a href="http://fir.im/docker">http://fir.im/docker</a></p>
+
+<p><img src="img/qrcode.png" alt=""></p>
+
+<h1>
+<a id="thanks" class="anchor" href="#thanks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Thanks</h1>
+
+<blockquote>
+<ul>
+<li><a href="https://github.com/ReactiveX/RxJava">RxJava</a></li>
+<li>
+<a href="https://github.com/ReactiveX/RxAndroid">RxAndroid</a> </li>
+<li><a href="https://github.com/square/dagger">Dagger</a></li>
+<li><a href="https://github.com/bumptech/glide">Glide</a></li>
+<li><a href="https://github.com/JakeWharton/butterknife">Butter Knife</a></li>
+<li><a href="https://github.com/square/retrofit">Retrofit</a></li>
+<li><a href="https://github.com/square/okhttp">OkHttp</a></li>
+<li><a href="https://github.com/square/leakcanary">LeakCanary</a></li>
+<li><a href="https://github.com/orhanobut/logger">Logger</a></li>
+<li><a href="https://github.com/facebook/stetho">Stetho </a></li>
+</ul>
+</blockquote>
+
+<h1>
+<a id="about-me" class="anchor" href="#about-me" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About me</h1>
+
+<p><a href="mailto:saymagic.dev@gmail.com">saymagic.dev@gmail.com</a></p>
+
+<h1>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>LICENSE</h1>
+
+<p>Copyright 2016 Saymagic</p>
+
+<p>Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at</p>
+
+<pre><code>   http://www.apache.org/licenses/LICENSE-2.0
+</code></pre>
+
+<p>Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/saymagic/dockerandroid">Dockerandroid</a> is maintained by <a href="https://github.com/saymagic">saymagic</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
