@@ -13,6 +13,7 @@ import android.util.TypedValue;
 
 import com.dockerandroid.App;
 import com.dockerandroid.R;
+import com.dockerandroid.ui.UIController;
 import com.umeng.analytics.MobclickAgent;
 
 import butterknife.ButterKnife;
@@ -23,6 +24,8 @@ import butterknife.ButterKnife;
 public abstract class BaseActivity extends AppCompatActivity {
 
     private final String TAG = BaseActivity.this.getClass().getSimpleName();
+
+    private boolean mHandled = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onResume();
         MobclickAgent.onPageStart(getActivityTag());
         MobclickAgent.onResume(this);
+        if (!mHandled) {
+            UIController.handleActivityIntent(this);
+            mHandled = true;
+        }
     }
 
     @Override

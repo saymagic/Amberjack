@@ -18,7 +18,6 @@ import com.dockerandroid.data.api.ServiceApiFactory;
 import com.dockerandroid.data.database.dpo.ServerInfoDpo;
 import com.dockerandroid.data.dbo.ServerInfo;
 import com.dockerandroid.presenters.impl.LoginPresenterImpl;
-import com.dockerandroid.ui.UIController;
 import com.dockerandroid.util.UIUtil;
 import com.dockerandroid.views.impl.LoginView;
 import com.dockerandroid.widget.DeletableEditText;
@@ -72,7 +71,6 @@ public class LoginActivity extends BaseActivity implements LoginView {
     @Override
     protected void onResume() {
         super.onResume();
-        UIController.handleActivityIntent(this);
     }
 
     @Override
