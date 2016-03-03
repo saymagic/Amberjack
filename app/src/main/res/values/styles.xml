@@ -1,0 +1,96 @@
+<resources>
+
+    <style name="AppBaseTheme.Light" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:activatedBackgroundIndicator">@drawable/activated_background</item>
+        <item name="popupMenuStyle">@style/PopupMenuStyle</item>
+        <item name="popupTheme">@style/PopupTheme</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme.Light" parent="AppBaseTheme.Light">
+        <!-- Customize your theme here. -->
+
+    </style>
+
+    <style name="AboutTheme" parent="AppBaseTheme.Light">
+
+    </style>
+
+    <style name="LaunchTheme" parent="AppTheme">
+        <!-- <item name="android:windowIsTranslucent">true</item>  -->
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="TextLabel" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColorHint">@android:color/darker_gray</item>
+        <item name="colorAccent">@android:color/darker_gray</item>
+        <item name="colorControlNormal">@android:color/darker_gray</item>
+        <item name="colorControlActivated">@android:color/darker_gray</item>
+        <item name="android:textSize">@dimen/material_18sp</item>
+        <item name="android:labelTextSize">@dimen/material_16sp</item>
+    </style>
+
+    <style name="TextLabel.Dark" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/textview_shallow_color</item>
+        <item name="android:textColorHint">@color/textview_shallow_color</item>
+        <item name="colorAccent">@color/textview_shallow_color</item>
+        <item name="colorControlNormal">@color/textview_shallow_color</item>
+        <item name="colorControlActivated">@android:color/darker_gray</item>
+        <item name="android:textSize">@dimen/material_18sp</item>
+        <item name="android:labelTextSize">@dimen/material_16sp</item>
+    </style>
+
+    <style name="TextLabelHighlight">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColorHint">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/material_18sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="NormalLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/hint_grey</item>
+        <item name="android:minHeight">1px</item>
+        <item name="android:layout_marginLeft">15dp</item>
+    </style>
+
+    <style name="Umeng_FB" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="PopupMenuStyle" parent="Base.Widget.AppCompat.PopupMenu.Overflow">
+    </style>
+
+    <style name="PopupTheme" parent="AppTheme">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+</resources>

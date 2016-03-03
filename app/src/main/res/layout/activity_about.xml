@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:background="?attr/colorPrimary"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="none"
+        android:scrollbars="none"
+        android:fillViewport="true"
+        android:cacheColorHint="@android:color/transparent"
+        android:scrollingCache="false"
+        android:overScrollMode="never">
+        <RelativeLayout
+            android:orientation="vertical"
+            android:background="?attr/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/app_ic_img"
+                android:layout_width="@dimen/material_64dp"
+                android:layout_height="@dimen/material_64dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/material_48dp"
+                android:src="@drawable/ic_launcher"
+                />
+
+            <TextView
+                android:id="@+id/app_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_below="@+id/app_ic_img"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/material_24dp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/abc_text_size_display_1_material"
+                android:text="@string/app_name"/>
+            <TextView
+                android:id="@+id/version_text_tv"
+                android:layout_below="@+id/app_name_tv"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/abc_text_size_medium_material"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+            <TextView
+                android:id="@+id/copyright_tv"
+                android:layout_marginTop="@dimen/material_64dp"
+                android:lineSpacingExtra="4dp"
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/material_14sp"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/material_64dp"
+                android:text="dsfdfd"
+                android:layout_alignParentBottom="true"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/containter_restart"
+        android:title="@string/containter.restart" />
+    <item
+        android:id="@+id/containter_kill"
+        android:title="@string/containter.kill" />
+    <item
+        android:id="@+id/containter_remove"
+        android:title="@string/containter.remove" />
+    <item
+        android:id="@+id/containter_pause"
+        android:title="@string/containter.pause" />
+    <item
+        android:id="@+id/containter_unpause"
+        android:title="@string/containter.unpause" />
+</menu>

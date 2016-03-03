@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/server_info_containter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/material_56dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/material_16dp">
+
+            <TextView
+                style="@style/TextLabel.Dark"
+                android:layout_marginRight="@dimen/material_16dp"
+                android:text="@string/server.info.name"/>
+
+            <com.dockerandroid.widget.CopiedTextView
+                android:id="@+id/server_info_name"
+                style="@style/TextLabelHighlight"
+                android:layout_marginRight="@dimen/material_16dp"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <View style="@style/NormalLine"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/material_56dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/material_16dp">
+
+            <TextView
+                style="@style/TextLabel.Dark"
+                android:layout_marginRight="@dimen/material_16dp"
+                android:text="@string/server.info.os"/>
+
+            <com.dockerandroid.widget.CopiedTextView
+                android:id="@+id/server_info_os"
+                style="@style/TextLabelHighlight"
+                android:layout_marginRight="@dimen/material_16dp"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <View style="@style/NormalLine"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/material_56dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/material_16dp">
+
+            <TextView
+                style="@style/TextLabel.Dark"
+                android:layout_marginRight="@dimen/material_16dp"
+                android:text="@string/server.info.host"/>
+
+            <com.dockerandroid.widget.CopiedTextView
+                android:id="@+id/server_info_host"
+                style="@style/TextLabelHighlight"
+                android:layout_marginRight="@dimen/material_16dp"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <View style="@style/NormalLine"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/material_56dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/material_16dp">
+
+            <TextView
+                style="@style/TextLabel.Dark"
+                android:layout_marginRight="@dimen/material_16dp"
+                android:text="@string/server.info.port"/>
+
+            <com.dockerandroid.widget.CopiedTextView
+                android:id="@+id/server_info_port"
+                style="@style/TextLabelHighlight"
+                android:layout_marginRight="@dimen/material_16dp"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <View style="@style/NormalLine"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/material_56dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/material_16dp">
+
+            <TextView
+                style="@style/TextLabel.Dark"
+                android:layout_marginRight="@dimen/material_16dp"
+                android:text="@string/server.info.mem"/>
+
+            <com.dockerandroid.widget.CopiedTextView
+                android:id="@+id/server_info_mem"
+                style="@style/TextLabelHighlight"
+                android:layout_marginRight="@dimen/material_16dp"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <View style="@style/NormalLine"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/material_56dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/material_16dp">
+
+            <TextView
+                style="@style/TextLabel.Dark"
+                android:layout_marginRight="@dimen/material_16dp"
+                android:text="@string/server.info.kernel.version"/>
+
+            <com.dockerandroid.widget.CopiedTextView
+                android:id="@+id/server_info_kernel_version"
+                style="@style/TextLabelHighlight"
+                android:layout_marginRight="@dimen/material_16dp"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <View style="@style/NormalLine"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/material_56dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/material_16dp">
+
+            <TextView
+                style="@style/TextLabel.Dark"
+                android:layout_marginRight="@dimen/material_16dp"
+                android:text="@string/server.info.docker.version"/>
+
+            <com.dockerandroid.widget.CopiedTextView
+                android:id="@+id/server_info_docker_version"
+                style="@style/TextLabelHighlight"
+                android:layout_marginRight="@dimen/material_16dp"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <View style="@style/NormalLine"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/material_56dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/material_16dp">
+
+            <TextView
+                style="@style/TextLabel.Dark"
+                android:layout_marginRight="@dimen/material_16dp"
+                android:text="@string/server.info.api.version"/>
+
+            <com.dockerandroid.widget.CopiedTextView
+                android:id="@+id/server_info_api_version"
+                style="@style/TextLabelHighlight"
+                android:layout_marginRight="@dimen/material_16dp"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <View style="@style/NormalLine"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/material_56dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/material_16dp">
+
+            <TextView
+                style="@style/TextLabel.Dark"
+                android:layout_marginRight="@dimen/material_16dp"
+                android:text="@string/server.info.arch"/>
+
+            <com.dockerandroid.widget.CopiedTextView
+                android:id="@+id/server_info_arch"
+                style="@style/TextLabelHighlight"
+                android:layout_marginRight="@dimen/material_16dp"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/hint_grey"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/material_16dp"
+            android:background="@color/white"/>
+
+        <TextView
+            android:id="@+id/server_delete"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/material_48dp"
+            android:layout_margin="@dimen/material_16dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:text="@string/server.info.delete"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/material_128dp"
+            android:background="@color/white"/>
+    </LinearLayout>
+</ScrollView>

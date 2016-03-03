@@ -1,0 +1,173 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.hugo'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'com.fernandocejas.frodo'
+
+Properties keyProperties = new Properties()
+keyProperties.load(project.rootProject.file('key.properties').newDataInputStream())
+
+Properties localProperties = new Properties()
+localProperties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+Properties configProperties = new Properties()
+configProperties.load(project.rootProject.file('config.properties').newDataInputStream())
+
+def libs = rootProject.ext.libraries;
+
+def releaseDate() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+def releaseTimeMillis() {
+    return System.currentTimeMillis();
+}
+
+android {
+    compileSdkVersion Integer.parseInt(BUILD_COMPILE_SDK_VERSION)
+    buildToolsVersion BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        applicationId "com.dockerandroid"
+        minSdkVersion Integer.parseInt(MIN_SDK_VERSION)
+        targetSdkVersion Integer.parseInt(BUILD_TARGET_SDK_VERSION)
+        versionCode Integer.parseInt(VERSION_CODE)
+        versionName VERSION_NAME
+        buildConfigField "boolean", "UMENG_UPLOAD_ERROR", "true"
+        buildConfigField "boolean", "FIR_UPLOAD_ERROR", "true"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    signingConfigs {
+        release {
+            try {
+                storeFile file("dockerandroid.jks")
+                storePassword keyProperties.getProperty("storePassword")
+                keyAlias keyProperties.getProperty("keyAlias")
+                keyPassword keyProperties.getProperty("keyPassword")
+            } catch (ex) {
+                logger.warning("What's up man? For release builds, you must define KEYSTORE_PASSWORD and KEY_PASSWORD.")
+            }
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "boolean", "UMENG_ENCRYPT_LOG", "false"
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            versionNameSuffix "-debug"
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.debug
+        }
+
+        release {
+            buildConfigField "boolean", "UMENG_ENCRYPT_LOG", "true"
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            minifyEnabled false
+            zipAlignEnabled true
+            shrinkResources false
+            signingConfig signingConfigs.release
+
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        def fileName = "dockerandroid_v${defaultConfig.versionName}_${releaseDate()}_${variant.productFlavors[0].name}.apk"
+                        output.outputFile = new File(outputFile.parent, fileName)
+                    }
+                }
+            }
+        }
+    }
+
+    productFlavors {
+        fir {}
+        umeng{}
+        wandoujia{}
+        baidu{}
+        anzhi{}
+        xiaomi{}
+        uc{}
+        yingyongbao{}
+        meizu{}
+    }
+
+    productFlavors.all { flavor ->
+        flavor.manifestPlaceholders = [appFlavor   : name,
+                                       firKey      : configProperties.getProperty("fir.key"),
+                                       umengKey    : configProperties.getProperty("umeng.key"),
+                                       umengChannel: name,
+                                       appBuildTime: releaseTimeMillis()]
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile "junit:junit:${libs.junit}"
+
+    /* ReactiveX library*/
+    compile "io.reactivex:rxjava:${libs.rxjava}"
+    compile "io.reactivex:rxandroid:${libs.rxandroid}"
+
+    /* Google library*/
+    apt "com.google.dagger:dagger-compiler:${libs.dagger}"
+    compile "com.android.support:support-v4:${libs.supportVersion}"
+    compile "com.android.support:appcompat-v7:${libs.supportVersion}"
+    compile "com.android.support:cardview-v7:${libs.supportVersion}"
+    compile "com.android.support:recyclerview-v7:${libs.supportVersion}"
+    compile "com.android.support:design:${libs.supportVersion}"
+    compile "com.google.code.gson:gson:${libs.gson}"
+    compile "com.google.dagger:dagger:${libs.dagger}"
+    compile "com.github.bumptech.glide:glide:${libs.glide}"
+    compile "com.android.support:multidex:${libs.multidex}"
+
+    /* Square Library*/
+    compile "com.jakewharton:butterknife:${libs.butterknife}"
+    compile "com.squareup.retrofit2:retrofit:${libs.retrofit}"
+    compile "com.squareup.retrofit2:adapter-rxjava:${libs.retrofit}"
+    compile "com.squareup.retrofit2:converter-gson:${libs.retrofit}"
+    compile "com.squareup.okhttp3:okhttp:${libs.okhttp}"
+    compile "com.squareup.okhttp3:logging-interceptor:${libs.okhttp}"
+    debugCompile "com.squareup.leakcanary:leakcanary-android:${libs.leakcanary}"
+    releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:${libs.leakcanary}"
+    testCompile "com.squareup.leakcanary:leakcanary-android-no-op:${libs.leakcanary}"
+
+    /* umeng */
+    compile "com.umeng:fb:${libs.umengfb}"
+    compile "com.umeng.analytics:analytics:latest.integration"
+
+    /* Fir */
+    compile 'im.fir:fir-sdk:latest.integration@aar'
+
+    /* Facebook*/
+    compile "com.facebook.stetho:stetho:${libs.stetho}"
+    compile "com.facebook.stetho:stetho-okhttp3:${libs.stetho}"
+    compile "com.facebook.stetho:stetho-js-rhino:${libs.stetho}"
+
+    /* Other Library*/
+    compile "com.github.orhanobut:logger:${libs.logger}"
+    compile "com.annimon:stream:${libs.annimon_stream}"
+}
+
+def adb = localProperties.getProperty('sdk.dir') + '/platform-tools/adb'
+
+task runFirDebug(dependsOn: 'installFirDebug') {
+    description 'Runs the debug-flavour of the app on the connected device'
+    doLast {
+        exec {
+            commandLine "$adb", "shell", "am", "start", "-n", "com.dockerandroid/com.dockerandroid.ui.activity.LaunchActivity"
+        }
+    }
+}
+

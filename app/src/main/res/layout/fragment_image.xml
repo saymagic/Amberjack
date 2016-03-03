@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@color/white">
+
+    <!--The main content view-->
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/image_coordinator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/image_refresher"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.dockerandroid.widget.RecyclerViewEmptySupport
+                android:id="@+id/image_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="4dp"/>
+        </android.support.v4.widget.SwipeRefreshLayout>
+        <RelativeLayout
+            android:id="@+id/image_no_image_area"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_image_no_image_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/view_normal_interval"
+                android:gravity="center"
+                android:text="@string/image.null"/>
+        </RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>
+</FrameLayout>
