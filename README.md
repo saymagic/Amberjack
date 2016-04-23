@@ -34,6 +34,10 @@ If response like below , you are ready!
 
 Try to login with your IP and Port! Have Fun!
 
+#Test Running
+
+> gralde installFirDebug
+
 #Download:
 
 [http://fir.im/docker](http://fir.im/docker)
@@ -50,7 +54,7 @@ Try to login with your IP and Port! Have Fun!
 >* [OkHttp](https://github.com/square/okhttp)
 >* [LeakCanary](https://github.com/square/leakcanary)
 >* [Logger](https://github.com/orhanobut/logger)
->* [Stetho ](https://github.com/facebook/stetho)
+>* [Stetho](https://github.com/facebook/stetho)
 
 # About me
 
