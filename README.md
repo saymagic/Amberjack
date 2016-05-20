@@ -3,7 +3,7 @@
 
 ![](img/logo.png)
 
-DockerAndroid based on Docker Remote API, it can get image and containter's info from docker server
+Amberjack based on Docker Remote API, it can get image and containter's info from docker server
 
 # How does it look like ?
 
