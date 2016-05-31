@@ -160,14 +160,4 @@ dependencies {
     compile "com.annimon:stream:${libs.annimon_stream}"
 }
 
-def adb = localProperties.getProperty('sdk.dir') + '/platform-tools/adb'
-
-task runFirDebug(dependsOn: 'installFirDebug') {
-    description 'Runs the debug-flavour of the app on the connected device'
-    doLast {
-        exec {
-            commandLine "$adb", "shell", "am", "start", "-n", "com.dockerandroid/com.dockerandroid.ui.activity.LaunchActivity"
-        }
-    }
-}
 
