@@ -7,9 +7,6 @@ apply plugin: 'com.fernandocejas.frodo'
 Properties keyProperties = new Properties()
 keyProperties.load(project.rootProject.file('key.properties').newDataInputStream())
 
-Properties localProperties = new Properties()
-localProperties.load(project.rootProject.file('local.properties').newDataInputStream())
-
 Properties configProperties = new Properties()
 configProperties.load(project.rootProject.file('config.properties').newDataInputStream())
 
