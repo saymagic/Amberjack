@@ -23,7 +23,6 @@ import com.dockerandroid.misc.Constant;
 import com.dockerandroid.misc.MiscHolder;
 import com.dockerandroid.util.StatisticsUtil;
 import com.orhanobut.logger.Logger;
-import com.umeng.analytics.AnalyticsConfig;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.onlineconfig.OnlineConfigAgent;
 
@@ -99,7 +98,7 @@ public class DataManager {
 
     private void initUmeng() {
         MobclickAgent.setDebugMode(BuildConfig.DEBUG);
-        AnalyticsConfig.enableEncrypt(BuildConfig.UMENG_ENCRYPT_LOG);
+//        AnalyticsConfig.enableEncrypt(BuildConfig.UMENG_ENCRYPT_LOG);
         MobclickAgent.setCatchUncaughtExceptions(isUmengBugEnable());
         OnlineConfigAgent.getInstance().setDebugMode(BuildConfig.DEBUG);
         OnlineConfigAgent.getInstance().updateOnlineConfig(MiscHolder.getApplicationContext());
