@@ -1,5 +1,6 @@
-# A Docker Android APP
+[![Build Status](https://travis-ci.org/saymagic/Amberjack.svg?branch=master)](https://travis-ci.org/saymagic/Amberjack)
 
+# A Docker Android APP
 
 ![](img/logo.png)
 
