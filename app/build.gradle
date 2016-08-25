@@ -38,7 +38,7 @@ android {
                                        firKey      : configProperties.getProperty("fir.key"),
                                        umengKey    : configProperties.getProperty("umeng.key"),
                                        umengChannel: name,
-                                       appBuildTime: releaseTimeMillis()]]
+                                       appBuildTime: releaseTimeMillis()]
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
