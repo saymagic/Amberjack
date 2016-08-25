@@ -28,4 +28,4 @@ script:
 - "./gradlew assembleDebug"
 
 after_success:
-- fir p app/build/outputs/apk/app-debug.apk -T $FIR_TOKEN -c "Upload by Travis CI - ${TRAVIS_BUILD_NUMBER}"
+- fir p app/build/outputs/apk/app-debug.apk -T ${FIR_TOKEN} -c "Upload by Travis CI - ${TRAVIS_BUILD_NUMBER}"
