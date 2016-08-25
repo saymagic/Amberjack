@@ -71,8 +71,8 @@ android {
             buildConfigField "boolean", "UMENG_ENCRYPT_LOG", "false"
             buildConfigField "boolean", "LOG_DEBUG", "true"
             versionNameSuffix "-debug"
-            minifyEnabled true
-            zipAlignEnabled false
+            minifyEnabled false
+            zipAlignEnabled true
             shrinkResources false
             signingConfig signingConfigs.debug
         }
