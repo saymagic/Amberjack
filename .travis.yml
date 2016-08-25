@@ -1,20 +1,29 @@
 language: android
+
 jdk:
   - oraclejdk8
-addons:
-  apt:
-    packages:
-      - oracle-java8-installer
-sudo: false
+
+env:
+  global:
+    # Add this
+    - MALLOC_ARENA_MAX=2
+    - ADB_INSTALL_TIMEOUT=10
+    
 android:
   components:
   - build-tools-23.0.1
   - android-23
   - extra-android-m2repository
   - extra-android-support
+
+cache: false
+# Add this
+sudo: required
+
 before_install:
 - chmod +x gradlew
 - gem install fir-cli
+
 script:
 - "./gradlew assembleDebug"
 after_deploy:
