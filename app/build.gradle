@@ -33,6 +33,12 @@ android {
         buildConfigField "boolean", "UMENG_UPLOAD_ERROR", "true"
         buildConfigField "boolean", "FIR_UPLOAD_ERROR", "true"
     }
+    
+    manifestPlaceholders = [appFlavor   : name,
+                                       firKey      : configProperties.getProperty("fir.key"),
+                                       umengKey    : configProperties.getProperty("umeng.key"),
+                                       umengChannel: name,
+                                       appBuildTime: releaseTimeMillis()]]
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -55,6 +61,11 @@ android {
     lintOptions {
         abortOnError false
     }
+    
+    packagingOptions{
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
 
     buildTypes {
         debug {
@@ -74,37 +85,7 @@ android {
             zipAlignEnabled true
             shrinkResources false
             signingConfig signingConfigs.release
-
-            applicationVariants.all { variant ->
-                variant.outputs.each { output ->
-                    def outputFile = output.outputFile
-                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                        def fileName = "dockerandroid_v${defaultConfig.versionName}_${releaseDate()}_${variant.productFlavors[0].name}.apk"
-                        output.outputFile = new File(outputFile.parent, fileName)
-                    }
-                }
-            }
         }
-    }
-
-    productFlavors {
-        fir {}
-        umeng{}
-        wandoujia{}
-        baidu{}
-        anzhi{}
-        xiaomi{}
-        uc{}
-        yingyongbao{}
-        meizu{}
-    }
-
-    productFlavors.all { flavor ->
-        flavor.manifestPlaceholders = [appFlavor   : name,
-                                       firKey      : configProperties.getProperty("fir.key"),
-                                       umengKey    : configProperties.getProperty("umeng.key"),
-                                       umengChannel: name,
-                                       appBuildTime: releaseTimeMillis()]
     }
 
 }
