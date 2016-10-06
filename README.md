@@ -1,12 +1,12 @@
 [![Build Status](https://travis-ci.org/saymagic/Amberjack.svg?branch=master)](https://travis-ci.org/saymagic/Amberjack)
 
-# A Docker Android APP
+# Docker Android APP
 
 ![](img/logo.png)
 
-Amberjack based on Docker Remote API, it can get image and containter's info from docker server
+Amberjack based on Docker Remote API, get image and containter's info from docker server
 
-# How does it look like ?
+# What does it look like ?
 
 <img src="img/Screenshot_2016-03-03-10-51-39.png" width="340" />
 <img src="img/Screenshot_2016-03-03-10-51-51.png" width="340" />
@@ -17,8 +17,8 @@ Amberjack based on Docker Remote API, it can get image and containter's info fro
 
 # How to use?
 
-* First, you must have a server installed Docker.
-* Second, modify `  /etc/default/docker` file, add TCP connection mode to DOCKER_OPTS.This file maybe empty, so you also need add unix-sock mode, just like this:
+* Firstly, you must have a server installed Docker.
+* Secondly, modify `  /etc/default/docker` file, add TCP connection mode to DOCKER_OPTS. The file maybe empty, so you also need add unix-sock mode, like this:
 
 	 DOCKER_OPTS="-H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock"
 * Restart docker.
