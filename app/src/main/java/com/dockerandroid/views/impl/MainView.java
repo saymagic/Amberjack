@@ -14,7 +14,6 @@ import com.dockerandroid.data.dbo.ServerInfo;
 import com.dockerandroid.ui.activity.BaseActivity;
 import com.dockerandroid.ui.fragment.BaseFragment;
 import com.dockerandroid.views.IToastView;
-import com.umeng.fb.FeedbackAgent;
 
 import java.util.List;
 
@@ -36,6 +35,4 @@ public interface MainView extends IToastView{
     void resetAdapter(List<Pair<Integer, ServerInfo>> infos);
 
     void selectDrawerListItem(int position);
-
-    FeedbackAgent getFeedBackAgent();
 }

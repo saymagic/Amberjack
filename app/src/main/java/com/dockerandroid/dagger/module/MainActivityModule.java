@@ -21,7 +21,6 @@ import com.dockerandroid.rx.rxbus.RxBus;
 import com.dockerandroid.ui.activity.MainActivity;
 import com.dockerandroid.ui.fragment.BaseFragment;
 import com.dockerandroid.ui.fragment.FragmentFactory;
-import com.umeng.fb.FeedbackAgent;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -93,9 +92,4 @@ public class MainActivityModule {
         return new DrawerListAdapter(mMainActivity, new ArrayList<>());
     }
 
-    @Provides
-    @ActivityScope
-    FeedbackAgent provideFeedbackAgent() {
-        return new FeedbackAgent(mMainActivity);
-    }
 }

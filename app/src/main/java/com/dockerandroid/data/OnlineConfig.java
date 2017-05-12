@@ -12,11 +12,9 @@ import android.text.TextUtils;
 import com.dockerandroid.R;
 import com.dockerandroid.data.dbo.LaunchInfo;
 import com.dockerandroid.misc.Constant;
-import com.dockerandroid.misc.MiscHolder;
 import com.dockerandroid.util.UIUtil;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
-import com.umeng.onlineconfig.OnlineConfigAgent;
 
 /**
  * Created by saymagic on 16/2/7.
@@ -24,8 +22,7 @@ import com.umeng.onlineconfig.OnlineConfigAgent;
 public class OnlineConfig {
 
     private static String getOnlineOrDefault(String key, String defaultVaule){
-        String value = OnlineConfigAgent.getInstance().getConfigParams(MiscHolder.getApplicationContext(), key);
-        return TextUtils.isEmpty(value) ? defaultVaule : value;
+        return defaultVaule;
     }
 
     public static boolean isFirBugOnlineEnable(){

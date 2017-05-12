@@ -41,7 +41,6 @@ import com.dockerandroid.util.MiscUtil;
 import com.dockerandroid.util.UIUtil;
 import com.dockerandroid.util.reflect.Reflect;
 import com.dockerandroid.views.impl.MainView;
-import com.umeng.fb.FeedbackAgent;
 
 import java.util.List;
 
@@ -87,8 +86,6 @@ public class MainActivity extends BaseActivity implements MainView {
     DataManager mDataManager;
     @Inject
     DrawerListAdapter mDrawerAdapter;
-    @Inject
-    FeedbackAgent mFeedbackAgent;
 
     private ActionBarDrawerToggle mDrawerToggle;
 
@@ -99,10 +96,7 @@ public class MainActivity extends BaseActivity implements MainView {
 
     @Override
     protected void onCreated(Bundle savedInstanceState) {
-        mMainPresenter.initDrawerData();
-        mFeedbackAgent.closeAudioFeedback();
-        mFeedbackAgent.removeWelcomeInfo();
-        mFeedbackAgent.sync();
+        mMainPresenter.initDrawerData();;
     }
 
     @Override
@@ -254,11 +248,6 @@ public class MainActivity extends BaseActivity implements MainView {
             return;
         }
         mLeftDrawerListview.setItemChecked(position, true);
-    }
-
-    @Override
-    public FeedbackAgent getFeedBackAgent() {
-        return mFeedbackAgent;
     }
 
     @Override

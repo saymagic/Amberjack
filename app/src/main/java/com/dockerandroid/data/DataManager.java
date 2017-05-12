@@ -23,8 +23,6 @@ import com.dockerandroid.misc.Constant;
 import com.dockerandroid.misc.MiscHolder;
 import com.dockerandroid.util.StatisticsUtil;
 import com.orhanobut.logger.Logger;
-import com.umeng.analytics.MobclickAgent;
-import com.umeng.onlineconfig.OnlineConfigAgent;
 
 import java.util.Collections;
 import java.util.List;
@@ -80,9 +78,7 @@ public class DataManager {
                 .subscribeOn(Schedulers.immediate())
                 .observeOn(Schedulers.immediate())
                 .subscribe((serverInfoDpos) -> addServerInfosForCache(serverInfoDpos));
-        initFir();
         initCrash();
-        initUmeng();
         long endTime = SystemClock.currentThreadTimeMillis();
         return endTime - startTime;
     }
@@ -91,33 +87,12 @@ public class DataManager {
         CrashHandler.INSTANCE.init(mContext, this);
     }
 
-    private void initFir() {
-        if (isFirBugEnable()) {
-        }
-    }
-
-    private void initUmeng() {
-        MobclickAgent.setDebugMode(BuildConfig.DEBUG);
-//        AnalyticsConfig.enableEncrypt(BuildConfig.UMENG_ENCRYPT_LOG);
-        MobclickAgent.setCatchUncaughtExceptions(isUmengBugEnable());
-        OnlineConfigAgent.getInstance().setDebugMode(BuildConfig.DEBUG);
-        OnlineConfigAgent.getInstance().updateOnlineConfig(MiscHolder.getApplicationContext());
-    }
-
     public String getFlavor() {
         return mFlavor;
     }
 
     public float getBuildTime() {
         return mBuildTime;
-    }
-
-    public boolean isFirBugEnable() {
-        return BuildConfig.FIR_UPLOAD_ERROR && OnlineConfig.isFirBugOnlineEnable();
-    }
-
-    public boolean isUmengBugEnable() {
-        return BuildConfig.UMENG_UPLOAD_ERROR && OnlineConfig.isUmengBugOnlineEnable();
     }
 
     public  boolean isSilentUpdate() {

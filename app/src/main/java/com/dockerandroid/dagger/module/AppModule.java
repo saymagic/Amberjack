@@ -11,7 +11,6 @@ import android.app.Application;
 import android.content.Context;
 
 import com.dockerandroid.rx.rxbus.RxBus;
-import com.umeng.fb.model.UserInfo;
 
 import java.util.HashMap;
 import java.util.Map;

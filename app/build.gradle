@@ -120,13 +120,6 @@ dependencies {
     releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:${libs.leakcanary}"
     testCompile "com.squareup.leakcanary:leakcanary-android-no-op:${libs.leakcanary}"
 
-    /* umeng */
-    compile "com.umeng:fb:${libs.umengfb}"
-    compile "com.umeng.analytics:analytics:latest.integration"
-
-    /* Fir */
-    compile 'im.fir:fir-sdk:latest.integration@aar'
-
     /* Facebook*/
     compile "com.facebook.stetho:stetho:${libs.stetho}"
     compile "com.facebook.stetho:stetho-okhttp3:${libs.stetho}"

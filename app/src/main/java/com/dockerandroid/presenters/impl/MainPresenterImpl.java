@@ -31,7 +31,6 @@ import com.dockerandroid.util.Objects;
 import com.dockerandroid.util.StatisticsUtil;
 import com.dockerandroid.util.UIUtil;
 import com.dockerandroid.views.impl.MainView;
-import com.umeng.update.UmengUpdateAgent;
 
 import java.util.Collections;
 import java.util.List;
@@ -139,7 +138,6 @@ public class MainPresenterImpl implements MainPresenter<MainView> {
                 StatisticsUtil.market(done);
                 return true;
             case R.id.action_feedback:
-                mMainView.getFeedBackAgent().startFeedbackActivity();
                 StatisticsUtil.feedback();
                 return true;
         }
@@ -154,12 +152,7 @@ public class MainPresenterImpl implements MainPresenter<MainView> {
 
     @Override
     public void checkUpdate() {
-        UmengUpdateAgent.setUpdateOnlyWifi(mDataManager.isUpdateOnlyWifi());
-        if (mDataManager.isSilentUpdate()) {
-            UmengUpdateAgent.silentUpdate(MiscHolder.getApplicationContext());
-        } else {
-            UmengUpdateAgent.update(MiscHolder.getApplicationContext());
-        }
+
     }
 
     @Override
