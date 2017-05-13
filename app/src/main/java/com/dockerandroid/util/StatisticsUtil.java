@@ -73,7 +73,7 @@ public class StatisticsUtil {
     public static void crash(Map map) {
     }
 
-    public static void feedback() {
+    public static void feedback(boolean success) {
     }
 
     public static void market(boolean has) {

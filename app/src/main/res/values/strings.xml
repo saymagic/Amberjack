@@ -27,7 +27,10 @@
     <string name="about.copyright">Copyright © %1$s saymagic.\nAll Rights Reserved.</string>
     <string name="about.share">分享</string>
     <string name="about.share.title">分享MDocker</string>
-    <string name="about.share.text">分享MDocker</string>
+    <string name="about.share.text">推荐你一款可以在手机上操作Docker镜像的软件，名字叫做MDocker, 点击这里下载</string>
+    <string name="about.feedback.email">mdocker@163.com</string>
+    <string name="about.feedback.subject">MDocker-反馈-%1$s-%2$s</string>
+    <string name="about.feedback.title">MDocker-反馈</string>
     <!-- Image-->
     <string name="image_null_name"></string>
 
@@ -104,8 +107,8 @@
     <string name="copy.success">拷贝成功</string>
 
     <!-- launch info -->
-    <string name="default_launch_info_des"></string>
-    <string name="default_launch_info_url">https://docker.com/</string>
-    <string name="default_launch_info_img">http://www.bz55.com/uploads/allimg/160422/139-1604221JP5.jpg</string>
+    <string name="default.launch.info.des"></string>
+    <string name="default.launch.info.url">https://docker.com/</string>
+    <string name="default.launch.info.img">http://www.bz55.com/uploads/allimg/160422/139-1604221JP5.jpg</string>
 </resources>
 

@@ -49,6 +49,10 @@ public class OnlineConfig {
         return getOnlineOrDefault(Constant.SHARE_TEXT, UIUtil.getString(R.string.about_share_text));
     }
 
+    public static String getFeedBackEmail(){
+        return getOnlineOrDefault(Constant.FEEDBACK_EMAIL, UIUtil.getString(R.string.about_feedback_email));
+    }
+
     public static LaunchInfo getLaunchImageUrl() {
         Gson gson = new Gson();
         try{

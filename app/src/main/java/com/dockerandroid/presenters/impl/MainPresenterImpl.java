@@ -11,13 +11,16 @@ package com.dockerandroid.presenters.impl;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.util.Pair;
 import android.view.MenuItem;
 
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
+import com.dockerandroid.BuildConfig;
 import com.dockerandroid.R;
 import com.dockerandroid.data.DataManager;
+import com.dockerandroid.data.OnlineConfig;
 import com.dockerandroid.data.dbo.ServerInfo;
 import com.dockerandroid.misc.MiscHolder;
 import com.dockerandroid.presenters.MainPresenter;
@@ -32,6 +35,7 @@ import com.dockerandroid.util.StatisticsUtil;
 import com.dockerandroid.util.UIUtil;
 import com.dockerandroid.views.impl.MainView;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -131,17 +135,32 @@ public class MainPresenterImpl implements MainPresenter<MainView> {
                     Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     activity.startActivity(intent);
-                }catch(ActivityNotFoundException e) {
+                } catch (ActivityNotFoundException e) {
                     done = false;
                     mMainView.showToast(UIUtil.getString(R.string.menu_no_activity_found));
                 }
                 StatisticsUtil.market(done);
                 return true;
             case R.id.action_feedback:
-                StatisticsUtil.feedback();
-                return true;
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                String[] to = new String[1];
+                to[0] = OnlineConfig.getFeedBackEmail();
+                intent.putExtra(Intent.EXTRA_EMAIL, to);
+                intent.putExtra(Intent.EXTRA_SUBJECT, UIUtil.getString(R.string.about_feedback_subject,
+                        BuildConfig.VERSION_NAME, String.valueOf(BuildConfig.VERSION_CODE)));
+                intent.putExtra(Intent.EXTRA_TEXT, "");
+                BaseActivity activity = mMainView.getActivity();
+                try {
+                    activity.startActivity(Intent.createChooser(intent, UIUtil.getString(R.string.about_feedback_title)));
+                } catch (ActivityNotFoundException e) {
+                    StatisticsUtil.feedback(false);
+                    mMainView.showToast(UIUtil.getString(R.string.menu_no_activity_found));
+                }
+                StatisticsUtil.feedback(false);
+
         }
-        return false;
+        return true;
     }
 
     @Override
@@ -173,7 +192,6 @@ public class MainPresenterImpl implements MainPresenter<MainView> {
                         },
                         (error) -> mMainView.showToast(UIUtil.getString(R.string.drawer_delete_fail)));
     }
-
 
 
     public List<Pair<Integer, ServerInfo>> generatePairListFromMap(Map<Integer, ServerInfo> map) {

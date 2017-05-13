@@ -40,6 +40,7 @@ public final class Constant {
     public static final String UPDATE_ONLY_WIFI = "UPDATE_ONLY_WIFI";
     public static final String COPYRIGHT_URL = "COPYRIGHT_URL";
     public static final String SHARE_TEXT = "SHARE_TEXT";
+    public static final String FEEDBACK_EMAIL = "FEEDBACK_EMAIL";
     public static final String LANUCH_URL = "LANUCH_URL";
     public static final String LAUNCH_HAS_AD = "LAUNCH_HAS_AD";
 
