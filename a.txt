@@ -1,0 +1,91 @@
+Parallel execution is an incubating feature.
+USE_GOOGLE_SERVICE = true
+use google service
+:clean
+:app:clean
+:app:preBuild UP-TO-DATE
+:app:preOtherReleaseBuild UP-TO-DATE
+:app:checkOtherReleaseManifest
+:app:preOtherDebugBuild UP-TO-DATE
+:app:prePlayDebugBuild UP-TO-DATE
+:app:prePlayReleaseBuild UP-TO-DATE
+:app:prepareComAndroidSupportAppcompatV72311Library
+:app:prepareComAndroidSupportCardviewV72311Library
+:app:prepareComAndroidSupportDesign2311Library
+:app:prepareComAndroidSupportMultidex100Library
+:app:prepareComAndroidSupportRecyclerviewV72311Library
+:app:prepareComAndroidSupportSupportV42400Library
+:app:prepareComGithubOrhanobutLogger112Library
+:app:prepareComGoogleAndroidGmsPlayServicesBase961Library
+:app:prepareComGoogleAndroidGmsPlayServicesBasement961Library
+:app:prepareComGoogleAndroidGmsPlayServicesTasks961Library
+:app:prepareComGoogleFirebaseFirebaseAnalytics961Library
+:app:prepareComGoogleFirebaseFirebaseAnalyticsImpl961Library
+:app:prepareComGoogleFirebaseFirebaseCommon961Library
+:app:prepareComGoogleFirebaseFirebaseConfig961Library
+:app:prepareComGoogleFirebaseFirebaseCore961Library
+:app:prepareComGoogleFirebaseFirebaseCrash961Library
+:app:prepareComGoogleFirebaseFirebaseIid961Library
+:app:preOtherDebugUnitTestBuild UP-TO-DATE
+:app:preOtherReleaseUnitTestBuild UP-TO-DATE
+:app:prePlayDebugUnitTestBuild UP-TO-DATE
+:app:prePlayReleaseUnitTestBuild UP-TO-DATE
+:app:prepareComSquareupLeakcanaryLeakcanaryAndroidNoOp131Library
+:app:prepareIoReactivexRxandroid101Library
+:app:prepareOtherReleaseDependencies
+:app:compileOtherReleaseAidl
+:app:compileOtherReleaseRenderscript
+:app:generateOtherReleaseBuildConfig
+:app:generateOtherReleaseAssets UP-TO-DATE
+:app:mergeOtherReleaseAssets
+:app:generateOtherReleaseResValues UP-TO-DATE
+:app:processOtherReleaseGoogleServices
+Parsing json file: /Users/saymagic/workspace/selfopen/Amberjack/app/google-services.json
+:app:generateOtherReleaseResources
+:app:mergeOtherReleaseResources
+:app:processOtherReleaseManifest
+:app:processOtherReleaseResources
+:app:generateOtherReleaseSources
+:app:processOtherReleaseJavaRes UP-TO-DATE
+:app:compileOtherReleaseJavaWithJavac
+:app:compileRetrolambdaOtherRelease
+:app:compileOtherReleaseNdk UP-TO-DATE
+:app:compileOtherReleaseSources
+:app:lintVitalOtherRelease
+:app:preDexOtherRelease
+:app:dexOtherRelease
+:app:validateReleaseSigning
+:app:packageOtherRelease
+:app:zipalignOtherRelease
+:app:assembleOtherRelease
+:app:checkPlayReleaseManifest
+:app:preparePlayReleaseDependencies
+:app:compilePlayReleaseAidl
+:app:compilePlayReleaseRenderscript
+:app:generatePlayReleaseBuildConfig
+:app:generatePlayReleaseAssets UP-TO-DATE
+:app:mergePlayReleaseAssets
+:app:generatePlayReleaseResValues UP-TO-DATE
+:app:processPlayReleaseGoogleServices
+Parsing json file: /Users/saymagic/workspace/selfopen/Amberjack/app/google-services.json
+:app:generatePlayReleaseResources
+:app:mergePlayReleaseResources
+:app:processPlayReleaseManifest
+:app:processPlayReleaseResources
+:app:generatePlayReleaseSources
+:app:processPlayReleaseJavaRes UP-TO-DATE
+:app:compilePlayReleaseJavaWithJavac
+:app:compileRetrolambdaPlayRelease
+:app:compilePlayReleaseNdk UP-TO-DATE
+:app:compilePlayReleaseSources
+:app:lintVitalPlayRelease
+:app:preDexPlayRelease
+:app:dexPlayRelease
+:app:packagePlayRelease
+:app:zipalignPlayRelease
+:app:assemblePlayRelease
+:app:assembleRelease
+
+BUILD SUCCESSFUL
+
+Total time: 1 mins 18.555 secs

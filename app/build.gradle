@@ -132,5 +132,9 @@ dependencies {
     compile "com.annimon:stream:${libs.annimon_stream}"
 }
 
-apply plugin: 'com.google.gms.google-services'
+if(Boolean.parseBoolean(USE_GOOGLE_SERVICE)){
+    apply plugin: 'com.google.gms.google-services'
+}else{
+    println("ignore google service")
+}
 
