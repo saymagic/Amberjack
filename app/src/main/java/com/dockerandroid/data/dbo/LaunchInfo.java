@@ -7,6 +7,9 @@
  */
 package com.dockerandroid.data.dbo;
 
+import com.dockerandroid.R;
+import com.dockerandroid.util.UIUtil;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,11 +31,11 @@ public class LaunchInfo {
     public static LaunchInfo DEFAULT = new LaunchInfo();
 
     static {
-        DEFAULT.setDes("放松心情 怡然自得");
+        DEFAULT.setDes(UIUtil.getString(R.string.default_launch_info_des));
         DEFAULT.setId(-1);
-        DEFAULT.setIntentUrl("http://blog.saymagic.cn");
-        DEFAULT.setMinShowTime(2);
-        DEFAULT.setUrl("http://cdn.saymagic.cn/dockerandroidlaunch_image_default.jpg");
+        DEFAULT.setIntentUrl(UIUtil.getString(R.string.default_launch_info_url));
+        DEFAULT.setMinShowTime(2000);
+        DEFAULT.setUrl(UIUtil.getString(R.string.default_launch_info_img));
     }
 
     public String getIntentUrl() {

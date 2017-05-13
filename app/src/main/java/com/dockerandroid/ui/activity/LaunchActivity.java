@@ -129,13 +129,11 @@ public class LaunchActivity extends BaseActivity {
             return;
         }
         mLaunchInfo = info;
-        mShowTime = Math.min(info.getMinShowTime(), mShowTime);
+        mShowTime = Math.max(info.getMinShowTime(), mShowTime);
         mLaunchAppTipTv.setText(mLaunchInfo.getDes());
         mLaunchAppTipTv.setOnClickListener((view) -> mIntentUrl = info.getIntentUrl());
         mLaunchAdIv.setOnClickListener((view) -> mIntentUrl = info.getIntentUrl());
         Glide.with(getApplicationContext()).load(info.getUrl()).dontAnimate()
-                .placeholder(R.drawable.launch_image_default)
-                .error(R.drawable.launch_image_default)
                 .diskCacheStrategy(DiskCacheStrategy.RESULT)
                 .into(mLaunchAdIv);
     }

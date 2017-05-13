@@ -102,5 +102,10 @@
     <string name="ago"></string>
 
     <string name="copy.success">拷贝成功</string>
+
+    <!-- launch info -->
+    <string name="default_launch_info_des"></string>
+    <string name="default_launch_info_url">https://docker.com/</string>
+    <string name="default_launch_info_img">http://www.bz55.com/uploads/allimg/160422/139-1604221JP5.jpg</string>
 </resources>
 

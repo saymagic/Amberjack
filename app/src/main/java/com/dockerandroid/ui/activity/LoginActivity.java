@@ -57,6 +57,11 @@ public class LoginActivity extends BaseActivity implements LoginView {
         return R.layout.activity_login;
     }
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     protected void onCreated(Bundle savedInstanceState) {
