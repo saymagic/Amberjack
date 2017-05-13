@@ -2,7 +2,7 @@
 
 ![](img/stick_pic.png)
 
-MDocker base on Docker Remote API, gets image and container's info from docker server.
+MWhale base on Docker Remote API, gets image and container's info from docker server.
 
 # User Interface
 

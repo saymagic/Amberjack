@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1075882820731",
+    "firebase_url": "https://mwhale-6d270.firebaseio.com",
+    "project_id": "mwhale-6d270",
+    "storage_bucket": "mwhale-6d270.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075882820731:android:d923d1fd02d4d096",
+        "android_client_info": {
+          "package_name": "tech.saymagic.mwhale"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1075882820731-2uls652jbumtta73h2orqblhrjcep6ag.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiFUAIN68qHx2oTGpJRvVQ-XmrXMrmlCg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

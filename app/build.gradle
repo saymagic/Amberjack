@@ -23,7 +23,7 @@ android {
     buildToolsVersion BUILD_TOOLS_VERSION
 
     defaultConfig {
-        applicationId "tech.saymagic.mdocker"
+        applicationId "tech.saymagic.mwhale"
         minSdkVersion Integer.parseInt(MIN_SDK_VERSION)
         targetSdkVersion Integer.parseInt(BUILD_TARGET_SDK_VERSION)
         versionCode Integer.parseInt(VERSION_CODE)
@@ -132,9 +132,5 @@ dependencies {
     compile "com.annimon:stream:${libs.annimon_stream}"
 }
 
-if(Boolean.parseBoolean(USE_GOOGLE_SERVICE)){
-    apply plugin: 'com.google.gms.google-services'
-}else{
-    println("ignore google service")
-}
+apply plugin: 'com.google.gms.google-services'
 
