@@ -4,8 +4,6 @@ apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'com.fernandocejas.frodo'
 
-Properties keyProperties = new Properties()
-keyProperties.load(project.rootProject.file('key.properties').newDataInputStream())
 
 Properties configProperties = new Properties()
 configProperties.load(project.rootProject.file('config.properties').newDataInputStream())
@@ -25,7 +23,7 @@ android {
     buildToolsVersion BUILD_TOOLS_VERSION
 
     defaultConfig {
-        applicationId "com.dockerandroid"
+        applicationId "tech.saymagic.mdocker"
         minSdkVersion Integer.parseInt(MIN_SDK_VERSION)
         targetSdkVersion Integer.parseInt(BUILD_TARGET_SDK_VERSION)
         versionCode Integer.parseInt(VERSION_CODE)
@@ -42,7 +40,9 @@ android {
     signingConfigs {
         release {
             try {
-                storeFile file("dockerandroid.jks")
+                Properties keyProperties = new Properties()
+                keyProperties.load(project.file('key.properties').newDataInputStream())
+                storeFile file(keyProperties.getProperty("storeFile"))
                 storePassword keyProperties.getProperty("storePassword")
                 keyAlias keyProperties.getProperty("keyAlias")
                 keyPassword keyProperties.getProperty("keyPassword")
@@ -78,6 +78,14 @@ android {
         }
     }
 
+    productFlavors{
+        play{
+
+        }
+        other{
+
+        }
+    }
 }
 
 dependencies {
@@ -99,6 +107,9 @@ dependencies {
     compile "com.google.dagger:dagger:${libs.dagger}"
     compile "com.github.bumptech.glide:glide:${libs.glide}"
     compile "com.android.support:multidex:${libs.multidex}"
+    compile "com.google.firebase:firebase-core:${libs.firebase}"
+    compile "com.google.firebase:firebase-crash:${libs.firebase}"
+    compile "com.google.firebase:firebase-config:${libs.firebase}"
 
     /* Square Library*/
     compile "com.jakewharton:butterknife:${libs.butterknife}"
@@ -121,4 +132,5 @@ dependencies {
     compile "com.annimon:stream:${libs.annimon_stream}"
 }
 
+apply plugin: 'com.google.gms.google-services'
 

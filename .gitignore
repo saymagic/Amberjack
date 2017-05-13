@@ -7,3 +7,5 @@ local.properties
 /build
 /captures
 *.jks
+key.properties
+google-services.json

@@ -1,24 +1,20 @@
 [![Build Status](https://travis-ci.org/saymagic/Amberjack.svg?branch=master)](https://travis-ci.org/saymagic/Amberjack)
 
-# Docker Android APP
+![](img/stick_pic.png)
 
-![](img/logo.png)
+MDocker base on Docker Remote API, gets image and container's info from docker server.
 
-Amberjack based on Docker Remote API, get image and containter's info from docker server
+# User Interface
 
-# What does it look like ?
+<img src="img/ui_1.png" width="340" />
+<img src="img/ui_2.png" width="340" />
 
-<img src="img/Screenshot_2016-03-03-10-51-39.png" width="340" />
-<img src="img/Screenshot_2016-03-03-10-51-51.png" width="340" />
+<img src="img/ui_3.png" width="340" />
 
-<img src="img/Screenshot_2016-03-03-10-51-55.png" width="340" />
-<img src="img/Screenshot_2016-03-03-10-52-28.png" width="340" />
+# Use-pattern
 
-
-# How to use?
-
-* Firstly, you must have a server installed Docker.
-* Secondly, modify `  /etc/default/docker` file, add TCP connection mode to DOCKER_OPTS. The file maybe empty, so you also need add unix-sock mode, like this:
+* Firstly, you must have a server which has installed Docker.
+* Secondly, you should modify `/etc/default/docker` file, and add TCP connection mode to DOCKER_OPTS. The file maybe empty, so you also need add unix-sock mode, like this:
 
 	 DOCKER_OPTS="-H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock"
 * Restart docker.
@@ -29,7 +25,7 @@ Amberjack based on Docker Remote API, get image and containter's info from docke
 	
 	curl http://localhost:2375/info
 
-If response like below , you are ready!
+If response looks like below , you are ready!
 
 ![](img/image_20160303102658.png)
 
@@ -37,13 +33,13 @@ Try to login with your IP and Port! Have Fun!
 
 #Test Running
 
-> gralde installFirDebug
+> gradle installOtherDebug
 
 #Download:
 
-[http://fir.im/docker](http://fir.im/docker)
+[Google Play]()
 
-![](img/qrcode.png)
+[http://fir.im/docker](http://fir.im/docker)
 
 #Thanks 
 >* [RxJava](https://github.com/ReactiveX/RxJava)
@@ -63,7 +59,7 @@ saymagic.dev@gmail.com
 
 # LICENSE
 
-   Copyright 2016 Saymagic
+   Copyright 2017 Saymagic
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
