@@ -37,7 +37,7 @@ Try to login with your IP and Port! Have Fun!
 
 #Download:
 
-[Google Play]()
+[Google Play](https://play.google.com/store/apps/details?id=tech.saymagic.mwhale)
 
 [http://fir.im/docker](http://fir.im/docker)
 
