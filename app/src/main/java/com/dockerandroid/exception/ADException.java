@@ -73,8 +73,8 @@ public class ADException extends Throwable {
         return new ADException(errorReason, new Exception());
     }
 
-    public static void throwRuntimeException(){
-        throw new RuntimeException();
+    public static void throwRuntimeException(Throwable e){
+        throw new RuntimeException(e);
     }
 
     public static RuntimeException generateRuntimeException() {

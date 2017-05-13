@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DockerAndroid</string>
+    <string name="app_name">MDocker</string>
 
     <!-- drawer-->
     <string name="drawer.add">添加服务器</string>
@@ -26,8 +26,8 @@
     <string name="about.update">检查更新</string>
     <string name="about.copyright">Copyright © %1$s saymagic.\nAll Rights Reserved.</string>
     <string name="about.share">分享</string>
-    <string name="about.share.title">分享DockerAndroid</string>
-    <string name="about.share.text">分享DockerAndroid</string>
+    <string name="about.share.title">分享MDocker</string>
+    <string name="about.share.text">分享MDocker</string>
     <!-- Image-->
     <string name="image_null_name"></string>
 

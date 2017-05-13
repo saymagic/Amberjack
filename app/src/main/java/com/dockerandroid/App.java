@@ -96,7 +96,7 @@ public class App extends MultiDexApplication {
                     @Override
                     public void onError(Throwable e) {
                         Logger.e(e, "What a pity! data init error!");
-                        ADException.throwRuntimeException();
+                        ADException.throwRuntimeException(e);
                     }
 
                     @Override

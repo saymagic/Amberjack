@@ -30,12 +30,7 @@ android {
         targetSdkVersion Integer.parseInt(BUILD_TARGET_SDK_VERSION)
         versionCode Integer.parseInt(VERSION_CODE)
         versionName VERSION_NAME
-        buildConfigField "boolean", "UMENG_UPLOAD_ERROR", "true"
-        buildConfigField "boolean", "FIR_UPLOAD_ERROR", "true"
         manifestPlaceholders = [appFlavor   : name,
-                                       firKey      : configProperties.getProperty("fir.key"),
-                                       umengKey    : configProperties.getProperty("umeng.key"),
-                                       umengChannel: name,
                                        appBuildTime: releaseTimeMillis()]
     }
 
@@ -68,8 +63,6 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField "boolean", "UMENG_ENCRYPT_LOG", "false"
-            buildConfigField "boolean", "LOG_DEBUG", "true"
             versionNameSuffix "-debug"
             minifyEnabled false
             zipAlignEnabled true
@@ -78,8 +71,6 @@ android {
         }
 
         release {
-            buildConfigField "boolean", "UMENG_ENCRYPT_LOG", "true"
-            buildConfigField "boolean", "LOG_DEBUG", "false"
             minifyEnabled false
             zipAlignEnabled true
             shrinkResources false

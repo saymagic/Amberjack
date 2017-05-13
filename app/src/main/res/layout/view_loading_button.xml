@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:background="@color/colorPrimary"
+             android:background="@drawable/primary_custom_btn_bg"
              android:layout_height="@dimen/material_48dp"
              android:paddingTop="@dimen/material_8dp"
              android:paddingBottom="@dimen/material_8dp"
@@ -11,7 +11,6 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_gravity="center"
-        android:background="@color/colorPrimary"
         android:text="@string/login.btn.text"
         android:textColor="@android:color/white"
         android:gravity="center"

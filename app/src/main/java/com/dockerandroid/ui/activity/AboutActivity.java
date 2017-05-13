@@ -8,11 +8,14 @@
 package com.dockerandroid.ui.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -47,6 +50,8 @@ public class AboutActivity extends BaseActivity implements AboutView {
     TextView mVersionTextTv;
     @Bind(R.id.copyright_tv)
     TextView mCopyrightTv;
+    @Bind(R.id.app_ic_img)
+    ImageView mIconView;
 
     @Inject
     AboutPresenter mPresenter;
@@ -60,6 +65,7 @@ public class AboutActivity extends BaseActivity implements AboutView {
 
     @Override
     protected void onCreated(Bundle savedInstanceState) {
+        mIconView.setColorFilter(Color.WHITE);
     }
 
     @Override

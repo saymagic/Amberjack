@@ -29,12 +29,15 @@
 
     </style>
 
+    <style name="LoginTheme" parent="AppBaseTheme.Light">
+
+    </style>
+
     <style name="AboutTheme" parent="AppBaseTheme.Light">
 
     </style>
 
     <style name="LaunchTheme" parent="AppTheme">
-        <!-- <item name="android:windowIsTranslucent">true</item>  -->
         <item name="android:windowNoTitle">true</item>
     </style>
 
@@ -65,12 +68,12 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColorHint">@color/colorPrimary</item>
-        <item name="colorAccent">@color/colorPrimary</item>
-        <item name="colorControlNormal">@color/colorPrimary</item>
-        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="colorAccent">@color/primary_text</item>
+        <item name="colorControlNormal">@color/primary_text</item>
+        <item name="colorControlActivated">@color/primary_text</item>
         <item name="android:singleLine">true</item>
         <item name="android:textSize">@dimen/material_18sp</item>
-        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textColor">@color/primary_text</item>
     </style>
 
     <style name="NormalLine">

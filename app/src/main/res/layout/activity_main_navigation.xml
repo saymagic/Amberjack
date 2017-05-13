@@ -15,6 +15,6 @@
         android:cacheColorHint="@android:color/transparent"
         android:choiceMode="singleChoice"
         android:divider="@android:drawable/divider_horizontal_bright"
-        android:dividerHeight="1px"/>
+        android:dividerHeight="@dimen/material_2dp"/>
 
 </LinearLayout>

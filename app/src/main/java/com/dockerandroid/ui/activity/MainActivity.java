@@ -23,6 +23,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
@@ -74,7 +75,7 @@ public class MainActivity extends BaseActivity implements MainView {
     @Bind(R.id.left_drawer_listview)
     ListView mLeftDrawerListview;
 
-    LinearLayout mAddServerContainter;
+    FrameLayout mAddServerContainter;
 
     @Inject
     MainPageListAdapter mPageAdapter;
@@ -134,7 +135,7 @@ public class MainActivity extends BaseActivity implements MainView {
     private void initDrawerView() {
         View footView = ((LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE)).inflate(R.layout.drawer_listview_footer, null, false);
         mLeftDrawerListview.addFooterView(footView);
-        mAddServerContainter = (LinearLayout) footView.findViewById(R.id.left_drawer_add_server);
+        mAddServerContainter = (FrameLayout) footView.findViewById(R.id.left_drawer_add_server);
         mAddServerContainter.setOnClickListener((view) -> mMainPresenter.onAddServerClick());
         mLeftDrawerListview.setAdapter(mDrawerAdapter);
         mLeftDrawerListview.setOnItemClickListener(

@@ -5,6 +5,7 @@
         <item
             android:id="@+id/drawer_add_server"
             android:icon="@drawable/ic_add"
+            android:checkable="true"
             android:title="@string/drawer.add"/>
     </group>
 

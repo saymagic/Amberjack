@@ -5,7 +5,8 @@
                 android:layout_height="match_parent"
                 android:background="@android:color/white"
                 android:orientation="vertical"
-                android:paddingTop="60dp">
+                android:fitsSystemWindows="true"
+                android:paddingTop="@dimen/material_120dp">
 
     <ScrollView
         android:layout_width="match_parent"

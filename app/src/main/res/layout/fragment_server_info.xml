@@ -222,7 +222,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/material_48dp"
             android:layout_margin="@dimen/material_16dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/primary_custom_btn_bg"
             android:textColor="@color/white"
             android:gravity="center"
             android:text="@string/server.info.delete"/>
