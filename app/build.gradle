@@ -47,7 +47,7 @@ android {
                 keyAlias keyProperties.getProperty("keyAlias")
                 keyPassword keyProperties.getProperty("keyPassword")
             } catch (ex) {
-                logger.warning("What's up man? For release builds, you must define KEYSTORE_PASSWORD and KEY_PASSWORD.")
+                logger.info("What's up man? For release builds, you must define KEYSTORE_PASSWORD and KEY_PASSWORD.")
             }
         }
     }
